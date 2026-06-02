@@ -144,7 +144,7 @@ session_start();
             cartTotalPrice.textContent = totalPrice;
         }
 
-        // Асинхронная отправка заказа на email через order.php
+        // Асинхронная отправка заказа на email через send_email.php 
         document.getElementById('order-form').addEventListener('submit', async (e) => {
             e.preventDefault(); // Предотвращаем перезагрузку страницы
 
@@ -156,7 +156,7 @@ session_start();
             };
 
             try {
-                const response = await fetch('order.php', {
+                const response = await fetch('send_email.php ', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(orderData)
